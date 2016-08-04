@@ -20,4 +20,5 @@ function ArrangeZero(arr)
 	return arr;
 }
 
-ArrangeZero([1, 4, 0, 2, 4, 0, 8, 10, 0, 11, 3, 0]);
+//test
+ArrangeZero([1, 4, 0, 2, 4, 0, 8, 10, 0, 11, 3, 0]); //[ 0, 0, 0, 0, 1, 4, 2, 4, 8, 10, 11, 3 ]
