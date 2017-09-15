@@ -36,5 +36,27 @@ function getPrevious(arr, idx)
 	return arr[idx];
 }
 
+//alternate method:
+function TriangleRow(num) { 
+    var arr = []
+    for(var i = 0; i <= num; i++){
+        if(i == 0){
+            arr.push([1])
+            continue
+        }
+        var temp = arr[arr.length - 1]
+        arr[i] = []
+        for(var j = 0; j <= temp.length; j++){
+            if(j == 0 || j == temp.length){
+                arr[i][j] = 1
+            }
+            else{
+                arr[i][j] = temp[j-1] + temp[j] 
+            }
+        }
+    }
+    return arr
+}
+
 //test the function
 triangle(6);
