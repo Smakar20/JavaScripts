@@ -2,7 +2,7 @@
 letter into its corresponding numbered position in the alphabet. Symbols and spaces will also be used in the input. For example: if str 
 is "af5c a#!" then your program should return 1653 1#!.*/
 
-function NumberEncoding(str) { 
+(function NumberEncoding(str) { 
     var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     var str1 = str.toLowerCase()
     var output = ""
@@ -15,4 +15,4 @@ function NumberEncoding(str) {
         }
     }
     return output
-}
+}('af5c a#!')) // 1653 1#!
