@@ -57,4 +57,11 @@ class Mathematic {
     numArr = Array.isArray(nums) ? nums : Object.values(arguments)
     return this.sort(numArr)[numArr.length - 1]
   }
+  
+  median(nums){
+    var numArr = []
+    numArr = Array.isArray(nums) ? nums : Object.values(arguments)
+    var sortedArr = this.sort(numArr)
+    return (sortedArr.length%2 != 0) ? sortedArr[Math.floor(sortedArr.length/2)] : (sortedArr[Math.floor(sortedArr.length/2)] + sortedArr[Math.floor(sortedArr.length/2) - 1])/2
+  }
 }
