@@ -32,7 +32,7 @@ spaces.*/
     
     if(tictactoeChecker(diag1)) return diag1.indexOf('-') * 3 + diag1.indexOf('-') +1 
     if(tictactoeChecker(diag2)){
-      return diag2.indexOf('-') * 3 + 1 + 1}
+      return (diag2.indexOf('-') + 1) * 3 - 1}
 }(["O","-","O","<>","-","X","-","<>","-","-","X"])) // 1
 
 function tictactoeChecker(arr){
