@@ -65,3 +65,5 @@ class Mathematic {
     return (sortedArr.length%2 != 0) ? sortedArr[Math.floor(sortedArr.length/2)] : (sortedArr[Math.floor(sortedArr.length/2)] + sortedArr[Math.floor(sortedArr.length/2) - 1])/2
   }
 }
+
+module.exports = Mathematic
