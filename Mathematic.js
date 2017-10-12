@@ -19,8 +19,7 @@ class Mathematic {
     var sum = 0
     for(var i of numArr){
       if(isNaN(i)) return 'Not a valid input'
-      
-      sum = (sum == 0) ? Number(i) : sum - Number(i)
+      sum =  Number(i) - sum
     }
     return sum
   }
