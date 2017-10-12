@@ -1,9 +1,8 @@
 class Mathematic {
   constructor(){
-    this.total = 0
   }
   
-  sum(nums){
+  add(nums){
     var numArr = []
     numArr = Array.isArray(nums) ? nums : Object.values(arguments)
     var sum = 0
@@ -11,23 +10,30 @@ class Mathematic {
       if(isNaN(i)) return 'Not a valid input'
       sum += Number(i)
     }
-    this.total = sum
     return sum
   }
   
-  add(num){
-    this.total += num
-    return this.total
+  sub(nums){
+    var numArr = []
+    numArr = Array.isArray(nums) ? nums : Object.values(arguments)
+    var sum = 0
+    for(var i of numArr){
+      if(isNaN(i)) return 'Not a valid input'
+      
+      sum = (sum == 0) ? Number(i) : sum - Number(i)
+    }
+    return sum
   }
   
-  sub(num){
-    this.total -= num
-    return this.total
-  }
-  
-  prod(num){
-    this.total = (this.total == 0) ? num : this.total * num
-    return this.total
+  prod(nums){
+    var numArr = []
+    numArr = Array.isArray(nums) ? nums : Object.values(arguments)
+    var prod = 1
+    for(var i of numArr){
+      if(isNaN(i)) return 'Not a valid input'
+      prod *= Number(i)
+    }
+    return prod
   }
   
   avg(nums){
