@@ -24,3 +24,14 @@ If there is not profit that could have been made with the stock prices, then you
     }
     return diff
 })([44, 30, 24, 32, 35, 30, 40, 38, 15]) //16
+
+//alternate method:
+(function StockPicker(arr){
+  var temp = -1
+  for(i = 0; i < arr.length-1; i++){
+    for(j = i+1; j < arr.length; j++){
+      if(temp < arr[j] - arr[i]) temp = arr[j]-arr[i]
+    }
+  }
+  return temp
+})([44, 30, 24, 32, 35, 30, 40, 38, 15])
