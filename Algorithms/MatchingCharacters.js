@@ -20,3 +20,21 @@ just return 0. The input will only consist of lowercase alphabetic characters. *
     }
     return count
 })('ahyjakh') //4 
+
+//alternate method:
+function MatchingCharacters(str) {
+	maxRes = 0;
+	let len = str.length;
+	for (let i = 0; i < len - 1; i++) {
+		let end = str.lastIndexOf(str[i]);
+		let mySlice = str.slice(i + 1, end);
+		maxRes = Math.max(maxRes, countUniq(mySlice));
+	}
+	return maxRes;
+
+	function countUniq(str) {
+		let arr = str.split('');
+		let mySet = new Set(arr);
+		return mySet.size;
+	}
+}
