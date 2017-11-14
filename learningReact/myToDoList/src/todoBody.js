@@ -29,11 +29,15 @@ export default class ToDoBody extends Component {
         this.setState(this.state)
     }
 
+    lenChecker(event){
+        if(String(this.itemToDo.value.trim()).length > 50) alert('Only 50 characters are allowed.')
+    }
+
    render(){
        var styles = {listStyleType: 'none'}
         return (
             <div>
-                <input placeholder="New" className="inpfld" ref={(a) => this.itemToDo = a} maxLength={50}/>
+                <input placeholder="New" className="inpfld" ref={(a) => this.itemToDo = a} maxLength={50} onChange={this.lenChecker.bind(this)}/>
                 <button className="btn btn-default bgColorNew" onClick={this.newButtonClick.bind(this)}> + </button>
                 {this.TodoCount()}
                 <ul className="ulSty"> 
