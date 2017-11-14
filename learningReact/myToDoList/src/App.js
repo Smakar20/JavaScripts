@@ -7,7 +7,7 @@ export default class App extends Component {
   
   render() {
     return (
-    <div className="App todo" style={{border: '3px solid red'}} width="75%">
+    <div className="App todo" style={{border: '3px solid red'}}>
       <ToDoHeader/>
       <ToDoBody/>
     </div>
