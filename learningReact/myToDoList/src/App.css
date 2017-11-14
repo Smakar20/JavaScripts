@@ -32,6 +32,13 @@
   font-style: italic;
   color: red;
 }
+
+.todo{
+  float: none;
+  margin: 0 15%;
+  padding: 0 20%;
+}
+
 .btn {
   width: 30px;
   height: 36px;
@@ -60,4 +67,16 @@
 
 .ulSty {
   padding: 0
+}
+
+.floatCenter {
+  float: right;
+
+  position: relative;
+  right: 40%;
+  text-align: left;
+}
+.floatCenter > .child {
+  position: relative;
+  left: 50%;
 }
