@@ -1,5 +1,5 @@
-##JavaScript repository.
+JavaScript repository.
 
-##My other coding links:
+My other coding links:
 
-- https://coderbyte.com/profile/Sohini
+https://coderbyte.com/profile/Sohini
