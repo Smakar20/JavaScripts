@@ -2,11 +2,9 @@
 
 function findMedian(arr1, arr2){
   var median = Math.round((arr1.length + arr2.length)/2)
-  var len = arr1.length + arr2.length,
-  findMed = null
+  var len = arr1.length + arr2.length
   for(var i = 0; i < arr1.length; i++){
     for(var j = 0; j < arr2.length; j++){
-      findMed = j
       if(arr1[i] < arr2[j]){
         arr2.splice(j,0,arr1[i])
         break
