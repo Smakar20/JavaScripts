@@ -16,10 +16,8 @@ function findMedian(arr1, arr2){
         break
       }
     }
-    if(findMed >= median){
-      return (len%2 == 0) ? (arr2[median] + arr2[median - 1])/2 : arr2[median-1]
-    }
   }
+  return (len%2 == 0) ? (arr2[median] + arr2[median - 1])/2 : arr2[median-1]
 }
 
 findMedian([1, 12, 15, 26, 34], [2, 13, 17, 30, 45]) //16
