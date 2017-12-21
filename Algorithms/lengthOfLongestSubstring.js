@@ -6,6 +6,29 @@ Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer 
 "pwke" is a subsequence and not a substring.
 */
 
+//method 1:
+function lengthOfLongestSubstring(s) {
+   if(s.length == 1) return s.length 
+   var longestSubStr = '', str = ''
+   var strObj = {}
+   for(var i = 0; i < s.length; i++){
+       if(strObj[s[i]]){
+           if(longestSubStr.length < str.length){
+               longestSubStr = str
+           }
+           var idx = str.indexOf(s[i])
+           var arr = str.split('')
+           arr.splice(0,idx+1)
+           str = arr.join('')
+       }
+       str += s[i]
+       strObj[s[i]] = true
+   }
+   if(str.length > longestSubStr.length) longestSubStr = str
+   return longestSubStr.length 
+}
+
+//methid 2:
 (function lengthOfLongestSubstring(str){
     var obj = {}
     var temp = "", prev = ""
