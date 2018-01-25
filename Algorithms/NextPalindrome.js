@@ -7,7 +7,7 @@ largest number that is a palindrome.*/
     var found = false
     var temp = num
     while(!found){
-        if(num < 10) return num + 1
+        if(num < 9) return num + 1
         temp += 1
         if(isPalindrome(temp.toString())){
             found = true
