@@ -1,19 +1,51 @@
 /*Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
 
 Example:
-
 Input: "babad"
 
 Output: "bab"
 
 Note: "aba" is also a valid answer.
-Example:
+ 
 
+Example:
 Input: "cbbd"
 
-Output: "bb"*/
+Output: "bb"
+*/
+var longestPalindrome = function(s) {
+    var output = ''
+    var count = 0
+    for(var i = 0; i < s.length; i++){
+        var str = checkPalindrome(s,i,i)
+        if(count < str.length){
+            count = str.length
+            output = str
+        }
+    }
+    
+    for(var i = 0; i < s.length - 1; i++){
+        var str = checkPalindrome(s,i,i+1)
+        if(count < str.length){
+            count = str.length
+            output = str
+        }
+    }
+    return output
+};
 
-//-------- method 1 ------------
+function checkPalindrome(s,l,r){
+    while(l >= 0 && r < s.length && s[l] == s[r]){
+        l--
+        r++
+    }
+    return s.slice(l+1,r)
+}
+
+
+longestPalindrome('babad') // 'bab'
+
+//-------- method 2 ------------
 var longestPalindrome = function(s) {
   if(s.length > 1000) return
   if(s.length == 1) return s
@@ -30,24 +62,6 @@ var longestPalindrome = function(s) {
   }
   return pal
 }
-
-longestPalindrome('cbbd') //'bb'
-
-//------ method 2 ------------------
-/*function longestPalindrome(s){
-  if(s.length > 1000) return 
-  if(s.length == 1) return s
-  var pal = ''
-  for(var i = 0; i < s.length-1; i++){
-    var str = s[i]
-    for(var j = i + 1; j < s.length; j++){
-      if(isPalindrome(str) && pal.length < str.length) pal = str
-      str += s[j]
-    }
-    if(isPalindrome(str) && pal.length < str.length) pal = str
-  }
-  return pal
-}*/
 
 function isPalindrome(str){
   return (str == str.split('').reverse().join(''))
