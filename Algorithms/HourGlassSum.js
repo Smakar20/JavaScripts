@@ -52,4 +52,4 @@ function HourGlass(matrix)
 // ------- test ----------//
 var matrix = [[1,1,1,0,0,0],[0,1,0,0,0,0],[1,1,1,0,0,0],[0,0,2,4,4,0],[0,0,0,2,0,0],[0,0,1,2,4,0]];
 var hourGlass = new HourGlass(matrix);
-console.log(hourGlass.greaterHourGlass());
+console.log(hourGlass.greaterHourGlass())
