@@ -34,5 +34,5 @@ function MartixAbsSum(matrix)
 var matrix=[[5,2,3],
 			[3,4,5],
 			[5,6,7]];
-var calMatrixSum = new MartixAbsSum(matrix);
-console.log(calMatrixSum.matrixSum());
+var calMatrixSum = new MartixAbsSum(matrix)
+console.log(calMatrixSum.matrixSum())
