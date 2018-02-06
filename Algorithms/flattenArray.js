@@ -6,7 +6,21 @@
      flatten([[1], [2, 3]])         === [1, 2, 3] 
      flatten([[[[1]]], [[[2]], 3]]) === [1, 2, 3]
  */
- 
+
+function flatten(arr){
+  if(!(Array.isArray(arr))) return arr
+  var output = []
+  return arr.reduce((s, a)=>{
+    if(!(Array.isArray(a))){
+      s.push(a)
+    }else{
+      s = s.concat((flatten(a)))
+    }
+   return s
+  }, output)
+}
+
+//----- alternate method --------
 function flatten(arr) {
   if(!(Array.isArray(arr))) return arr
   var output = []
