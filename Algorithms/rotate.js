@@ -16,3 +16,19 @@ function rotate(arr, n){
 }
 
 rotate([1, 2, 3, 4, 5, 6, 7], 2) //[3, 4, 5, 6, 7, 1, 2]
+
+//alternate method:
+var rotate = function(nums, k) {
+   var k = k%nums.length 
+   if(k == 0) return
+   
+    while(k > 0){
+      k--
+      rotateArr(nums)  
+    }
+};
+
+function rotateArr(arr){
+    //var ele = arr.pop()
+    arr.unshift(arr.pop())
+}
