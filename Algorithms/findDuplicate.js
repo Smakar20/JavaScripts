@@ -19,6 +19,10 @@ var findDuplicate = function(nums) {
 };
 
 //alternate method with o(1) space complexity
+/*First off, we can easily show that the constraints of the problem imply that a cycle must exist. Because each number in nums is between 
+1 and n, it will necessarily point to an index that exists. Therefore, the list can be traversed infinitely, which implies that there is 
+a cycle. Additionally, because 0 cannot appear as a value in nums, nums[0] cannot be part of the cycle. Therefore, traversing the array in
+this manner from nums[0] is equivalent to traversing a cyclic linked list.*/
 
 function findDuplicate(nums) {
     // Find the intersection point of the two runners.
