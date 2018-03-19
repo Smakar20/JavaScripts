@@ -29,3 +29,16 @@ var maxSlidingWindow = function(nums, k) {
     }
     return output
 }
+
+//alternate method:
+function maxSliding(nums,k){
+    var output = []
+    for(var i = 0; i <= nums.length-k; i++){
+        output.push(findMax(nums.slice(i,i+k)))
+    }
+    return output
+}
+
+function findMax(arr){
+    return Math.max.apply(null,arr)
+}
