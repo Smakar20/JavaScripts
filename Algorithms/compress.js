@@ -41,19 +41,29 @@ Since the character "a" does not repeat, it is not compressed. "bbbbbbbbbbbb" is
 Notice each digit has it's own entry in the array.*/
 
 var compress = function(chars) {
-  var charCount = 1
-  var output = ''
-   for(var i = 0; i < chars.length; i++){
-     if(chars[i] == chars[i+1]){
-       charCount += 1
-     }else{
-       output += (charCount != 1) ? chars[i] + String(charCount) : chars[i]
-       charCount = 1
-     }
-   }
-   return output.split('').length
-}
+    var slowIdx = 0
+    var count = 1
+    for(var i = 1; i <= chars.length; i++){
+        if(chars[i] == chars[i-1]){
+            count++
+            continue
+        }
+        chars[slowIdx] = chars[i-1]
+         if(count > 1){
+             var str = String(count)
+             for(var j = 0; j < str.length; j++){
+                slowIdx++
+                chars[slowIdx] = str[j]
+             }
+         }
+        slowIdx++
+        count = 1
+    }
+    chars.splice(slowIdx, chars.length)
+    return chars.length
+};
 
 //--------- test ----------
 var arr = ["a","a","b","b","c","c","c"]
-compress(arr)
+compress(arr) //6
+
