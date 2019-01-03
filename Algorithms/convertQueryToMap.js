@@ -30,7 +30,7 @@ function buildObj(str1, obj, str2){
    }
    buildObj(str1.substr(str1.indexOf('.')+1), obj[str1.substr(0, str1.indexOf('.'))], str2);
   }else {
-    obj[str1] = decodeURI(str2);
+    obj[str1] = decodeURIComponent(str2);
   }
   return obj;
 }
