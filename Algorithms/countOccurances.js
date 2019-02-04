@@ -10,7 +10,9 @@ Complexity required - O(log(n))
   function countOccurances(arr, num){
     
     var startIdx = findElement(arr, 0, arr.length, num, true);
-
+    
+    if (startIdx === arr.length || arr[startIdx] !== num) return 0;
+    
     var lstIdx = findElement(arr, 0, arr.length, num, false) - 1;
     console.log(`${startIdx} and ${lstIdx}`);
     return (lstIdx - startIdx) + 1;
