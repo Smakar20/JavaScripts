@@ -13,6 +13,7 @@ Output: 4
 Explanation: The longest valid parentheses substring is "()()"
  */
 
+// O(n3) solution
 var longestValidParentheses = function(s) {
     var longest = 0;
     for (var i = 0; i < s.length; i++){
@@ -40,5 +41,31 @@ function isValid(s){
     }
     return (stack.length === 0);
 }
+
+// O(n2) solution
+
+var longestValidParentheses = function(s) {
+    var longest = 0;
+    for (var i = 0; i < s.length; i++){
+        var count = 0;
+        for(var j = i; j < s.length; j++){
+            if (s[j] === '('){
+                count++;
+            } 
+            else {
+                count--;
+            }
+            
+            if (count < 0) break;
+            
+            if (count === 0){
+                if(j - i + 1 > longest) longest = j - i + 1;
+            }
+        }
+    }
+    return longest;
+};
+
+//------ test --------------
 
 longestValidParentheses('((())') //4
