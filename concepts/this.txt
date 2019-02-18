@@ -1,0 +1,10 @@
+function Person(){
+	this.age = 10;
+
+	setTimeout(function(){
+		this.age++;
+		console.log(this.age);  // NaN --(as this refers to window/global object)
+	}, 1000);
+}
+
+var p = new Person();
