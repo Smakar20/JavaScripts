@@ -36,6 +36,8 @@ function sortString(str) {
     sortedMap[s].push(input[i]);
   })
   /*
+  // alternate approach:
+  
     for(var i of input){
       var sortedStr = JSON.stringify(i.split('').sort());
         if(!sortedMap[sortedStr]){
