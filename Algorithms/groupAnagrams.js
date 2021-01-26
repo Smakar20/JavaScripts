@@ -1,6 +1,18 @@
-/*Given an array of strings, group anagrams together.
+/**
+ * Group a list of words into a list of lists of words. Group by anagrams.
 
-For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
+    Input = ['dog', 'elvis', 'forest', 'fortes', 'foster', 'goat',
+             'god', 'heros', 'horse', 'lives', 'shore', 'softer']
+    Output:
+     [
+         ['elvis', 'lives'],
+         ['forest', 'fortes', 'foster', 'softer'],
+         ['heros', 'horse', 'shore'],
+         ['dog', 'god'],
+         ['goat']
+     ]
+    
+    For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
 Return:
 
 [
@@ -8,23 +20,31 @@ Return:
   ["nat","tan"],
   ["bat"]
 ]
-Note: All inputs will be in lower-case.*/
+Note: All inputs will be in lower-case
+ */
+function sortString(str) {
+  return str.split('').sort().join('');
+}
 
-var groupAnagrams = function(strs) {
-    var anagramObj = {}
-    for(var s of strs){
-        if(anagramObj[JSON.stringify(s.split('').sort())] == undefined){
-            anagramObj[JSON.stringify(s.split('').sort())] = [s]
-        }else{
-            anagramObj[JSON.stringify(s.split('').sort())].push(s)
-        }
+(function groupByAnagram(input){
+  const sorted = input.map((i) => sortString(i));
+  const sortedMap = {};
+  sorted.forEach((s, i) =>{
+    if(!sortedMap[s]) {
+      sortedMap[s] = [];
     }
-    return Object.values(anagramObj)
-};
+    sortedMap[s].push(input[i]);
+  })
+  /*
+    for(var i of input){
+      var sortedStr = JSON.stringify(i.split('').sort());
+        if(!sortedMap[sortedStr]){
+            sortedMap[sortedStr] = []
+        }
+        sortedMap[sortedStr].push(i);
+    }
+  */
+  return Object.values(sortedMap);
+})(['dog', 'elvis', 'forest', 'fortes', 'foster', 'goat',
+             'god', 'heros', 'horse', 'lives', 'shore', 'softer']);
 
-
-groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"])  /* [
-  ["ate", "eat","tea"],
-  ["nat","tan"],
-  ["bat"]
-]*/
