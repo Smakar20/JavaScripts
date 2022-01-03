@@ -40,9 +40,7 @@ function curry(fn) {
     if (args.length >= fn.length) {
       return fn.apply(this, args);
     } else {
-      return ((...args2) => {
-        return curried.apply(this, args.concat(args2));
-      });
+      return ((...args2) => curried.apply(this, [...args, ...args2]));
     }
   }
 }
