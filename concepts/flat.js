@@ -21,7 +21,7 @@ function flat_recursive(arr, depth = 1) {
   if (!depth) return arr;
 //   let output = [];
 //   arr.forEach(a => {
-//       if (Array.isArray(a)) output.push(...flat(a, depth - 1));
+//       if (Array.isArray(a)) output.push(...flat_recursive(a, depth - 1));
 //       else output.push(a);
 //   })
  // return output;
