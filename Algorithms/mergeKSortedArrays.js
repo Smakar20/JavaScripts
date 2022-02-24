@@ -13,7 +13,6 @@ output = [-124, -1, 0, 1, 3, 5, 6, 9, 12, 20, 21, 81, 121, 150]
 */
 
 function mergeSortedArrays(arrays) {
-  arrays.sort((a, b) => a[0] - b[0]);
 	let output = [...arrays[0]];
 	let cur = 1;
 	while (cur < arrays.length) {
