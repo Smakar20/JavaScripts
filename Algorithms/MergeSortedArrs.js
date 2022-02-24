@@ -41,3 +41,31 @@ function sorting(arr1,arr2)
 }
 
 sorting([1,2,4,6,8,9,10],[3,5,7]); //[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+
+//------------------ sorting and adding in new array ------------------------
+function mergeSortedArrays(arr1, arr2) {
+	if (arr1?.length === 0) return arr2;
+    if (arr2?.length === 0) return arr1;
+    let output = [];
+    let [i, j] = [0, 0];
+    while (i < arr1.length || j < arr2.length) {
+        if (i >= arr1.length) {
+            output.push(...arr2.slice(j));
+            break;
+        }
+        if (j >= arr2.length) {
+          output.push(...arr1.slice(i));
+          break;
+        }
+        if (arr1[i] >= arr2[j]) {
+          output.push(arr2[j]);
+          j++;
+        } else {
+          output.push(arr1[i]);
+          i++;
+        }
+        
+    }
+	return output;
+}
+
